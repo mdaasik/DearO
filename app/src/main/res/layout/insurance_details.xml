@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="details"
+            type="com.carworkz.dearo.domain.entities.Insurance" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="8dp">
+        <LinearLayout
+            android:id="@+id/cashlessParentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:text="@string/cashless"
+                android:textColor="@color/black" />
+            <CheckBox
+                android:id="@+id/cashlessView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:buttonTint="@color/red"
+                android:checked="@{details.cashless}" />
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/claimNumberView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Claim Intimation Number"
+                android:inputType="text"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:text="@{details.claimNumber}"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Insurance Company" />
+        <Spinner
+            android:id="@+id/insuranceCompanyView"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Insurance Company"
+            android:spinnerMode="dialog"
+            tools:listitem="@layout/support_simple_spinner_dropdown_item" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/policyNumberErrorView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/policyNumberView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Policy Number"
+                android:inputType="text"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:text="@{details.policyNumber}"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:id="@+id/policyDateView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/insuranceDateErrorView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/insuranceDateView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_date_range_black_24dp"
+                    android:drawablePadding="4dp"
+                    android:focusable="false"
+                    android:hint="Policy Expiry Date"
+                    android:inputType="none"
+                    android:singleLine="true"
+                    android:text='@{details.expiryDate}'
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/dateErrorView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/red"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    tools:text="Error Here!" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_grey" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3f51b5</color>-->
+    <!--<color name="colorPrimaryDark">#3f51b5</color>-->
+    <!--<color name="colorPrimaryLight">#495ed1</color>
+    <color name="colorAccent">#2c1d3b</color>-->
+    <color name="black">#000000</color>
+    <color name="black_transparent">#4D000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="old_lavender">#727272</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="persion_red">#d32f2f</color>
+    <color name="forest_green">#2e7b32</color>
+    <color name="green">#59C75F</color>
+
+    <color name="check_box_yellow">#fdd835</color>
+    <color name="check_box_green">#64dd17</color>
+    <color name="check_box_red">#f44336</color>
+
+
+    <color name="dim_gray">#706f6f</color>
+    <color name="red">#ff0000</color>
+
+    <color name="icon_color">#03A9F4</color>
+    <color name="icon_dev_color">#64dd17</color>
+
+    <color name="black_overlay">#66000000</color>
+
+
+<!--   <color name="colorPrimary">#2196F3</color>-->
+    <color name="colorPrimary">#22409A</color>
+    <color name="colorPrimaryNew">#9022409A</color>
+   <!-- <color name="colorPrimaryDark">#1976D2</color>-->
+    <color name="colorPrimaryDark">#22409A</color>
+  <!--  <color name="colorPrimaryLight">#BBDEFB</color>-->
+    <color name="colorPrimaryLight">#F46F22</color>
+    <color name="colorPrimaryLightNew">#90F46F22</color>
+    <color name="colorAccent">#FF5722</color>
+    <color name="textColorPrimary">#DE000000</color>
+    <color name="textColorSecondary">#99000000</color><!--60% black-->
+    <color name="textColorPrimaryInverse">#99FFFFFF</color>
+    <color name="textColorSecondaryInverse">#DEFFFFFF</color>
+    <color name="textColorDisabled">#8A000000</color><!--54% black-->
+    <color name="divider">#BDBDBD</color>
+    <!--<color name="divider">#e1e1e1</color>-->
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="foregroundColor">#FFFFFF</color>
+    <color name="error">#b00020</color>
+    <color name="noFocus">#afb8c7</color>
+    <color name="backgroundGrey">#eaeaea</color>
+    <color name="borderGrey">#e1e1e1</color>
+    <color name="darkTransparent">#99000000</color>
+
+    <color name="colorAccidentalText">#d7a207</color>
+    <color name="colorAccidental">#26d7a207</color>
+    <color name="colorAccidental1">#5CD7A207</color>
+    <color name="colorMajorText">#ea4335</color>
+    <color name="colorMajor">#26ea4335</color>
+    <color name="colorMinorText">#4285f4</color>
+    <color name="colorMinor">#264285f4</color>
+    <color name="colorMinor1">#465442F4</color>
+    <color name="colorPeriodicText">#34a853</color>
+    <color name="colorPeriodic">#2634a853</color>
+
+    <color name="headingBackground">#f4f4f4</color>
+    <color name="switch_yellow">#fbbc05</color>
+    <color name="switch_red">#b00020</color>
+    <color name="color_orange">#ff9600</color><!--this color is used in amc mostly-->
+    <color name="bg_gray">#ecedef</color>
+
+    <color name="link_color">#0645AD</color>
+</resources>

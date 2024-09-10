@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".appointments.createappointment.servicePackages.ServicePackageFragment"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Spinner
+            android:id="@+id/filterSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/spinner_style"
+            android:textAlignment="gravity"
+            android:gravity="end"
+            android:minWidth="200dp"
+            android:overlapAnchor="false"
+            tools:listitem="@layout/support_simple_spinner_dropdown_item" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_service_packages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:spanCount="2"
+        tools:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/row_service_package" />
+
+    <TextView
+        android:id="@+id/noPackageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Packages Found"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:drawableTop="@drawable/ic_cancel_black_120dp" />
+</LinearLayout>

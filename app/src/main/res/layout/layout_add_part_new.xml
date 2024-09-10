@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nested"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/textInputLayout10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/brandView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoplmnopqrstuvwxyz0123456789- "
+                android:dropDownHeight="170dp"
+                android:hint="@string/add_edit_hint_brand"
+                android:imeOptions="actionDone"
+                android:textAppearance="@style/DearOTextAppearance.SubtitleRegular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textInputLayout9"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/partNumberView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoplmnopqrstuvwxyz0123456789- "
+                android:dropDownHeight="170dp"
+                android:hint="@string/add_edit_hint_part_number"
+                android:imeOptions="actionDone"
+                android:textAppearance="@style/DearOTextAppearance.SubtitleRegular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/partDescView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_edit_hint_part_description"
+                android:imeOptions="actionDone"
+                android:textAppearance="@style/DearOTextAppearance.SubtitleRegular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/mrpTitleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_edit_label_mrp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
+
+        <EditText
+            android:id="@+id/mrpView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/border_split_invoice"
+            android:digits="1234567890."
+            android:ems="10"
+            android:hint="@string/add_edit_generic_hint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="7"
+            android:minHeight="@dimen/dimen_add_edit_part_default_container_height"
+            android:padding="10dp"
+            android:selectAllOnFocus="true"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            app:layout_constraintEnd_toStartOf="@+id/quantityTitleView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mrpTitleView"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_edit_label_quantity"
+            app:layout_constraintStart_toStartOf="@+id/quantityTitleView"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
+
+        <!--<EditText-->
+        <!--android:id="@+id/editText2"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:text="Name"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/editText"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/textView11" />-->
+
+        <LinearLayout
+            android:id="@+id/quantityTitleView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_split_invoice"
+            android:minHeight="@dimen/dimen_add_edit_part_default_container_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mrpView"
+            app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+            <EditText
+                android:id="@+id/quantityView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@null"
+                android:digits="1234567890."
+                android:ems="10"
+                android:hint="@string/add_edit_generic_hint"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:padding="10dp"
+                android:selectAllOnFocus="true"
+                android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mrpView"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:targetApi="o" />
+
+
+            <Spinner
+                android:id="@+id/unitsListView"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@color/divider"
+                android:spinnerMode="dialog" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_edit_label_hsn_code"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mrpView" />
+
+        <LinearLayout
+            android:id="@+id/hsnParentView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_split_invoice"
+            android:gravity="center"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15">
+
+
+            <TextView
+                android:id="@+id/hsnView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                android:gravity="center_vertical"
+                android:text="@string/add_edit_label_na"
+                android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_edit_label_cgst"
+            app:layout_constraintStart_toStartOf="@+id/cgstView"
+            app:layout_constraintTop_toBottomOf="@+id/hsnParentView" />
+
+        <EditText
+            android:id="@+id/cgstView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/border_split_invoice"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/add_edit_generic_hint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="@dimen/dimen_add_edit_part_default_container_height"
+            android:padding="10dp"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            app:layout_constraintEnd_toStartOf="@+id/sgstView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_weight="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            tools:targetApi="o" />
+
+
+        <LinearLayout
+            android:id="@+id/discountParentView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_split_invoice"
+            android:minHeight="@dimen/dimen_add_edit_part_default_container_height"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sgstView"
+            app:layout_constraintTop_toBottomOf="@+id/textView21">
+
+            <EditText
+                android:id="@+id/discountView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@null"
+                android:digits="0123456789."
+                android:ems="10"
+                android:hint="@string/add_edit_generic_hint"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:selectAllOnFocus="true"
+                android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/mrpView"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:targetApi="o" />
+
+
+            <Spinner
+                android:id="@+id/discountListView"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@color/divider"
+                android:spinnerMode="dialog" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_edit_label_sgst"
+            app:layout_constraintStart_toStartOf="@+id/sgstView"
+            app:layout_constraintTop_toBottomOf="@+id/hsnParentView" />
+
+        <EditText
+            android:id="@+id/sgstView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/border_split_invoice"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/add_edit_generic_hint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="@dimen/dimen_add_edit_part_default_container_height"
+            android:padding="10dp"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            app:layout_constraintEnd_toStartOf="@+id/discountParentView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="0.25"
+            app:layout_constraintStart_toEndOf="@+id/cgstView"
+            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_edit_label_discount"
+            app:layout_constraintStart_toStartOf="@+id/discountParentView"
+            app:layout_constraintTop_toBottomOf="@+id/hsnParentView" />
+
+        <com.carworkz.dearo.customviews.toggle.widget.LabeledSwitch
+            android:id="@+id/focSwitch"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_gravity="top"
+            android:layout_margin="8dp"
+            android:enabled="false"
+            app:colorBorder="@color/white"
+            app:colorCircleOff="@color/white"
+            app:colorCircleOn="@color/white"
+            app:colorOff="@color/light_grey"
+            app:colorOn="@color/forest_green"
+            app:layout_constraintBottom_toTopOf="@+id/space"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/space"
+            app:layout_constraintTop_toBottomOf="@+id/sgstView"
+            app:on="false"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:textOff="FOC"
+            app:textOn="FOC" />
+
+        <LinearLayout
+            android:id="@+id/space"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sgstView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="details"
+            type="com.carworkz.dearo.domain.entities.Company" />
+
+        <variable
+            name="address"
+            type="com.carworkz.dearo.domain.entities.Address" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+
+        <Button
+            android:id="@+id/insuranceCompanyAssistView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/outline_button"
+            android:text="@string/accidental_company_assist"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:textColor="@color/colorPrimary" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tip_contact_details_street"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:maxLines="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/streetView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/enable_disable_edit"
+                android:enabled="true"
+                android:textSize="14sp"
+                android:hint="@string/accidental_hint_address"
+                android:imeOptions="actionNext"
+                android:inputType="textMultiLine"
+                android:text="@{address.street}"
+                android:nextFocusDown="@+id/localityView"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:baselineAligned="false">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tip_contact_details_pincode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:maxLines="1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pinCodeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/enable_disable_edit"
+                    android:enabled="true"
+                    android:text='@{Integer.toString(address.pincode) != Integer.toString(0) ? Integer.toString(address.pincode) : "" }'
+                    android:hint="@string/accidental_company_pincode"
+                    android:textSize="14sp"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:nextFocusRight="@+id/cityView"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tip_contact_details_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:maxLines="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cityView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/enable_disable_edit"
+                    android:enabled="false"
+                    android:hint="@string/accidental_company_city"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:text="@{address.city}"
+                    android:maxLines="1"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/gstView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/accidental_company_gst_number"
+                android:textSize="14sp"
+                android:inputType="textCapCharacters"
+                android:text="@{details.gstNumber}" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</layout>

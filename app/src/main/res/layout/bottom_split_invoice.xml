@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/backgroundColor"
+    android:elevation="5dp"
+    android:orientation="horizontal"
+    android:outlineProvider="paddedBounds">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.35"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/proforma_title_insurance_amount"
+            android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+        <TextView
+            android:id="@+id/splitInvoiceSummaryInsuranceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            tools:text="Rs. 10,00,00" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.35"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/proforma_title_customer_amount"
+            android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+        <TextView
+            android:id="@+id/splitInvoiceSummaryCustomerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            tools:text="Rs. 10,00,00" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.35"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/proforma_title_total_amount"
+            android:textAppearance="@style/DearOTextAppearance.Caption"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/splitInvoiceSummaryTotalView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            android:textColor="@color/white"
+            tools:text="Rs. 10,00,00" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

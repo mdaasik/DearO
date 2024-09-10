@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingStart="@dimen/M_margin_small"
+        android:paddingTop="@dimen/M_margin_smallest"
+        android:paddingEnd="@dimen/M_margin_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/benefitName"
+            android:layout_weight="2"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/DearOTextAppearance.Caption"
+            android:text="Regular Service" />
+
+        <TextView
+            android:id="@+id/availableCount"
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textAppearance="@style/DearOTextAppearance.Body.Medium.B1"
+            android:text="2"
+            android:textColor="@color/check_box_green" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingStart="@dimen/M_margin_small"
+        android:paddingTop="4dp"
+        android:paddingEnd="@dimen/M_margin_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/usedCount"
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textAppearance="@style/DearOTextAppearance.Caption"
+            android:text="3 Availed" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/M_margin_smallest"
+        android:background="@color/light_grey" />
+</LinearLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/layOutNewEstimator"
+        layout="@layout/row_new_estimator_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:id="@+id/estimateRowParentView"
+    android:orientation="vertical"
+    android:background="@drawable/row_proforma_border"
+    android:clipToPadding="false"
+    android:elevation="5dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/labourItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+            android:textColor="@color/textColorPrimary"
+            tools:text="Oil Filter" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/rateTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/outward_process_labour_hint_rate" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/labourSurchargeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.16"
+                android:hint="Surcharge:"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+            <TextView
+                android:id="@+id/labourSurchargeAmountView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.16"
+                android:paddingStart="4dp"
+                android:hint="0"
+                android:maxLines="1"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:id="@+id/labourReductionLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.16"
+                android:text="Reduction:"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+            <TextView
+                android:id="@+id/labourReductionAmountView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.16"
+                android:maxLines="1"
+                android:text="0"
+                android:paddingStart="4dp"
+                android:textAlignment="viewStart" />
+            <!-- <TextView
+                 android:id="@+id/labourdiscountTaxView"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="8dp"
+                 android:layout_weight="0.5"
+                 android:textAlignment="viewEnd"
+                 android:textAppearance="@style/DearOTextAppearance.Caption"
+                 android:textColor="@color/textColorSecondary"
+                 android:visibility="visible"
+                 tools:text="Disc: 10% - Tax: 10%" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/labourdiscountTaxView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="0.5"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/DearOTextAppearance.Caption"
+                android:textColor="@color/textColorSecondary"
+                android:visibility="visible"
+                tools:text="Disc: 10% - Tax: 10%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="0.35"
+                android:background="@drawable/border_split_invoice"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/labourRateAmountView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/outward_process_labour_hint_final_rate"
+                    android:inputType="numberDecimal"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="16sp"
+                    tools:ignore="Autofill" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3" />
+
+            <TextView
+                android:id="@+id/labourTotalView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                android:textColor="@color/textColorPrimary"
+                tools:text="Rs.1345" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/vendorNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:drawablePadding="4dp"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/DearOTextAppearance.Caption.Link"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="Mehul Kadam" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:gravity="right"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/foc"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="@style/DearOTextAppearance.Caption"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:text="FOC"
+            android:textStyle="bold"
+            tools:visibility="visible"
+            android:background="@color/forest_green" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>
+</FrameLayout>

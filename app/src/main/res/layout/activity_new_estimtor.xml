@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <!--<include-->
+    <!--layout="@layout/layout_top_estimator"-->
+    <!--android:visibility="gone" />-->
+
+    <FrameLayout
+        android:id="@+id/estimator_top_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundColor"
+        android:clipToPadding="false"
+        android:elevation="5dp"
+        tools:minHeight="30dp" />
+
+    <!--amc view-->
+    <LinearLayout
+        android:id="@+id/amcView"
+        android:layout_below="@+id/estimator_top_container"
+        android:layout_width="match_parent"
+        android:paddingLeft="12dp"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:background="#f0dcbe"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:padding="4dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_discount_offer"/>
+        <TextView
+            android:id="@+id/amcPackageName"
+            android:layout_width="wrap_content"
+            tools:text="gold amc applied"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/color_orange"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <!--end amc view-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/estimator_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/amcView"
+        android:layout_marginBottom="55dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:context=".outwarding.OutwardingProcessActivity" />
+
+    <FrameLayout
+        android:id="@+id/fl_new_estimator_bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/new_estimator_bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/backgroundColor"
+        android:clipToPadding="false"
+        android:elevation="5dp" />
+</RelativeLayout>
+

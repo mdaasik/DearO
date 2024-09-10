@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <LinearLayout
+        android:id="@+id/ll_parent_toolbar_click"
+        android:layout_width="wrap_content"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/Search_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_search_black_24dp"
+        android:layout_margin="8dp"
+        tools:ignore="ContentDescription" />
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

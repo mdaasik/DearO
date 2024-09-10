@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_action"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:layout_gravity="center_vertical"
+    android:background="@color/colorPrimary"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="JC-001" />
+
+            <TextView
+                android:id="@+id/subTitleToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="In progress" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_parent_toolbar_click_primary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_toolbar_action_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/white"
+                tools:ignore="ContentDescription"
+                tools:srcCompat="@drawable/ic_add_white_24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_parent_toolbar_click_secondary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_toolbar_action_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/white"
+                tools:ignore="ContentDescription"
+                tools:srcCompat="@drawable/ic_add_white_24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_parent_toolbar_click_tertiary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_toolbar_action_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/white"
+                tools:ignore="ContentDescription"
+                tools:srcCompat="@drawable/ic_add_white_24dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>

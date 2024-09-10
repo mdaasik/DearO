@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/baseLayout"
+        layout="@layout/base_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="65dp"
+        android:id="@+id/quickScrollView"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/sectionOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:minHeight="40dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
+
+            <FrameLayout
+                android:id="@+id/sectionTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:minHeight="40dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
+
+            <FrameLayout
+                android:id="@+id/sectionThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:minHeight="40dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
+
+            <FrameLayout
+                android:id="@+id/sectionFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:minHeight="40dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
+
+            <FrameLayout
+                android:id="@+id/sectionFive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:minHeight="40dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="16dp"
+        android:baselineAligned="false"
+        android:background="@color/backgroundColor"
+        android:clipToPadding="false"
+        android:id="@+id/bottomActionParentView"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/bottomActionButton1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quick_jc_btn_go_to_estimate"
+                android:id="@+id/bottomActionButton1TextView"
+                android:textAppearance="@style/DearOTextAppearance.Body.Medium.B2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Rs. 10,000"
+                android:id="@+id/estimateTotalView"
+                android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomActionButton2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quick_jc_btn_create_jc"
+                android:id="@+id/bottomActionButton2TextView"
+                android:textAppearance="@style/DearOTextAppearance.Body.Medium.B2"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

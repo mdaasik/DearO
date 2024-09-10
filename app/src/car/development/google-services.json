@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "8425955263",
+    "firebase_url": "https://dearo-49ae1.firebaseio.com",
+    "project_id": "dearo-49ae1",
+    "storage_bucket": "dearo-49ae1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8425955263:android:adcb1cc8fe221059",
+        "android_client_info": {
+          "package_name": "com.carworkz.dearo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8425955263-a2sal61thjmu1dmg6tf11d7uj4o1mq72.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.carworkz.dearo",
+            "certificate_hash": "814475c0475fe82b58612d66e0b0129bc6ef1415"
+          }
+        },
+        {
+          "client_id": "8425955263-hmokkbllp5slv6g2qqomlchs0gmf5v0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDreCjphsRKAgautvfUg2mSdKdjFRsp31s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8425955263-hmokkbllp5slv6g2qqomlchs0gmf5v0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8425955263:android:89c7b58db0a90636",
+        "android_client_info": {
+          "package_name": "com.carworkz.dearo.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8425955263-hpufpfpvrpdugbnc67hadk4mi8mh4huo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.carworkz.dearo.debug",
+            "certificate_hash": "04eb5f9b4acfde314cf5590dd18349294512e499"
+          }
+        },
+        {
+          "client_id": "8425955263-hmokkbllp5slv6g2qqomlchs0gmf5v0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDreCjphsRKAgautvfUg2mSdKdjFRsp31s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8425955263-hmokkbllp5slv6g2qqomlchs0gmf5v0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8425955263:android:9ca3041d99efa07e578b0a",
+        "android_client_info": {
+          "package_name": "com.carworkz.dearo.development.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8425955263-hmokkbllp5slv6g2qqomlchs0gmf5v0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDreCjphsRKAgautvfUg2mSdKdjFRsp31s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8425955263-hmokkbllp5slv6g2qqomlchs0gmf5v0q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

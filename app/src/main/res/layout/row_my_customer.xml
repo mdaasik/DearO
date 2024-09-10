@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:minWidth="350dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_make_model_variant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="Tata - Nano - Petrol" />
+
+            <TextView
+                android:id="@+id/tv_reg_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textSize="14sp"
+                tools:text="MH01 AQ 7154, Atul More" />
+
+            <TextView
+                android:id="@+id/tv_recent_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_timer_grey_24dp"
+                android:gravity="center_vertical"
+                android:padding="4dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tools:text="17 Jan" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_call"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_weight="0.3"
+            android:minWidth="50dp"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_call_black_24dp"
+            tools:ignore="ContentDescription,content" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separatorView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/light_grey"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/parentCustomerAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/createJobCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_create_jobcard_18dp"
+            android:gravity="center"
+            android:minHeight="50dp"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:text="@string/create_job_card"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/bookAppointmentView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_book_appointment_18dp"
+            android:gravity="center"
+            android:minHeight="50dp"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:text="@string/book_appointment"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</LinearLayout>

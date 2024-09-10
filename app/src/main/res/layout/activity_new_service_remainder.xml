@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarServiceRemainder"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarServiceRemainder"
+        android:paddingBottom="@dimen/dimen_service_remainder_submit_button_height">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_remainder_title"
+                android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+            <include
+                android:id="@+id/layOutServiceRemainder"
+                layout="@layout/layout_service_remainder" />
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/service_remainder_invoice_remarks_title"
+                android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:background="@color/backgroundGrey"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="@string/note"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content">
+                    <com.carworkz.dearo.customviews.toggle.widget.LabeledSwitch
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="top"
+                        app:colorBorder="@color/white"
+                        app:on="true"
+                        android:enabled="false"
+                        app:colorCircleOff="@color/white"
+                        app:colorCircleOn="@color/white"
+                        app:colorOff="@color/switch_yellow"
+                        app:colorOn="@color/switch_red"
+                        app:textOff=""
+                        app:textOn="" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
+                        android:layout_gravity="top"
+                        android:text="@string/invoice_remark_red_note"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content">
+                    <com.carworkz.dearo.customviews.toggle.widget.LabeledSwitch
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="top"
+                        app:colorBorder="@color/white"
+                        app:on="false"
+                        android:enabled="false"
+                        app:colorCircleOff="@color/white"
+                        app:colorCircleOn="@color/white"
+                        app:colorOff="@color/switch_yellow"
+                        app:colorOn="@color/switch_red"
+                        app:textOff=""
+                        app:textOn="" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="12sp"
+                        android:layout_marginStart="8dp"
+                        android:layout_gravity="top"
+                        android:text="@string/invoice_remark_yellow_note"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/addedItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/addItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical"
+                android:minHeight="40dp"
+                android:text="+Add Remarks"
+                android:textAppearance="@style/DearOTextAppearance.Caption"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/submitView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_service_remainder_submit_button_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:text="@string/service_remainder_set_reminder_continue"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button" />
+
+</RelativeLayout>

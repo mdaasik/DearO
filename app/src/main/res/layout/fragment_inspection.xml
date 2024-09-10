@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.carworkz.dearo.addjobcard.createjobcard.inspection.InspectionFragment">
+
+
+    <Spinner
+        android:id="@+id/spinner_inspection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:minHeight="50dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_inspection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

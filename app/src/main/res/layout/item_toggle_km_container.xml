@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:background="@drawable/border_split_invoice">
+
+
+    <ImageView
+        android:id="@+id/pmsPrev"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:background="@color/divider"
+        app:tint="@color/black"
+        app:srcCompat="@drawable/ic_remove_black_24dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/pmsView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        android:gravity="center"
+        android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+        tools:text="100,000 Kms" />
+
+
+    <ImageView
+        android:id="@+id/pmsNext"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:background="@color/divider"
+        app:tint="@color/black"
+        app:srcCompat="@drawable/ic_add_white_24dp"
+        tools:ignore="ContentDescription" />
+
+
+</LinearLayout>

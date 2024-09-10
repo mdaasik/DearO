@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.carworkz.dearo.pdf.MultiPdfActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabPaddingStart="5dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:tabPaddingEnd="5dp"
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        app:tabTextAppearance="@style/DearOTextAppearance.SubtitleRegular"
+        android:background="@color/colorPrimary"
+        app:tabIndicatorHeight="0dp" />
+
+    <include
+        android:id="@+id/layCommonPdf"
+        layout="@layout/layout_common_pdf" />
+
+</LinearLayout>

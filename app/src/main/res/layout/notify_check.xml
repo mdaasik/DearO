@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/alert_padding_notify">
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        style="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/alert_margin_start"
+        android:checked="true"
+        android:buttonTint="@color/colorAccent"
+        android:text="Notify Customer"
+        android:fontFamily="@string/font_family_sans_serif"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="@dimen/body1" />
+
+</RelativeLayout>

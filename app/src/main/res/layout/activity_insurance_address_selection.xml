@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.carworkz.dearo.addjobcard.createjobcard.accidental.selectionaddress.InsuranceAddressSelectionActivity">
+
+    <include
+        android:id="@+id/baseLayout"
+        layout="@layout/base_layout"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:id="@+id/insuranceAddressListParentView">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundGrey"
+            android:gravity="center_vertical"
+            android:minHeight="50dp"
+            android:textColor="@color/textColorSecondary"
+            android:padding="16dp"
+            android:textAppearance="@style/DearOTextAppearance.Caption"
+            android:text="@string/insurance_address_select_label_select_address" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/insuranceAddressSelectionRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/row_insurance_address_selection" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/noAddressesFoundView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableTop="@drawable/ic_location_on_grey_24dp"
+        android:text="@string/insurance_address_select_label_no_address_available"
+        android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+
+</FrameLayout>
+
+

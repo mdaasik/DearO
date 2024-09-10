@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="details"
+            type="com.carworkz.dearo.domain.entities.AMCDetails" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:text="AMC Available"
+                android:padding="4dp"
+                android:textColor="@color/colorPrimary" />
+
+            <CheckBox
+                android:id="@+id/isAvailableView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:buttonTint="@color/red"
+                android:checked="@{details.isAvailable}" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amcNumberView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="AMC Number"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:maxLength="50"
+                android:text="@{details.number}" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:id="@+id/dateParentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/amcDateView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="AMC Expiry Date"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:focusable="false"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_date_range_black_24dp"
+                    android:inputType="none"
+                    android:textSize="14sp"
+                    android:text="@{details.expiryDate}" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@color/light_grey" />
+    </LinearLayout>
+</layout>

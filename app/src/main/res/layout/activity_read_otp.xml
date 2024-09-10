@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.carworkz.dearo.login.readotp.ReadOtpActivity">
+
+    <ProgressBar
+        android:id="@+id/pb_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/TextReadOtpMarginTop"
+        android:text="@string/read_otp_enter_otp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/TextSizeReadOtpEnterOtp" />
+
+    <TextView
+        android:id="@+id/tv_readotp_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/TextSizeReadOtpMobileNumber"
+        tools:text="8828306332" />
+
+
+    <EditText
+        android:id="@+id/et_readotp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/EditTextReadOtpHeight"
+        android:layout_margin="@dimen/EditTextReadOtpMargin"
+        android:hint="@string/enter_otp"
+        android:inputType="number"
+        android:maxLength="6"
+        android:padding="@dimen/EditTextReadOtpPadding"
+        android:textColor="@color/colorPrimary"
+        android:importantForAutofill="no"
+        android:textColorHint="@color/black"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/tv_readotp_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/otp_error"
+        android:textColor="@color/persion_red"
+        android:textSize="@dimen/TextSizeReadOtpResend"
+        android:visibility="gone" />
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ButtonLoginMarginLR"
+        android:layout_marginStart="@dimen/ButtonLoginMarginLR"
+        android:layout_marginTop="@dimen/ButtonLoginMarginTop"
+        android:background="@color/colorPrimary"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_readOtp_resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="@string/resend_otp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/TextSizeReadOtpResend" />
+
+</LinearLayout>

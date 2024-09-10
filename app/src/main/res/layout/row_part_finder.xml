@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:minHeight="115dp"
+    android:background="@drawable/border_top_bottom"
+    android:orientation="vertical"
+    android:id="@+id/ll_part_finder_parent"
+    android:paddingBottom="@dimen/dimen_part_finder_padding_top_bottom"
+    android:paddingLeft="@dimen/dimen_part_finder_padding_left_right"
+    android:paddingRight="@dimen/dimen_part_finder_padding_left_right"
+    android:paddingTop="@dimen/dimen_part_finder_padding_top_bottom">
+
+    <TextView
+        android:id="@+id/tv_part_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Oil Filter"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/dimen_part_finder_title"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_part_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="110dp"
+        tools:text="MFC Xpress 550041109 5W-40 API SN Sem synthetic Car Engine Oil"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_part_finder_description" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_part_finder_part_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.7"
+            tools:text="MFC-23dee8"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_part_finder_instock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            tools:text="INSTOCK"
+            android:visibility="gone"
+            android:textColor="@color/forest_green"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_part_finder_part_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Rs.11,50,000"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_part_finder_part_rate" />
+
+    <TextView
+        android:id="@+id/remarkView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Remark For the above Part"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:textSize="14sp" />
+</LinearLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.carworkz.dearo.thirdpartydetails.ThirdPartyDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="com.carworkz.dearo.thirdpartydetails.ThirdPartyDetailsActivity">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameThirdInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/third_party_label_name"
+                app:hintTextAppearance="@style/DearOTextAppearance.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/nameThirdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+                    android:textColor="@color/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gstNumberThirdInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/third_party_label_gst_number"
+                app:hintTextAppearance="@style/DearOTextAppearance.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/gstNumberThirdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+                    android:textColor="@color/textColorPrimary"
+                    tools:ignore="TextFields"
+                    tools:text="sfgg" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mobileNumberThirdInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/third_party_label_mobile_number"
+                app:hintTextAppearance="@style/DearOTextAppearance.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/mobileNumberThirdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+                    android:textColor="@color/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailThirdInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/third_party_label_email_id"
+                app:hintTextAppearance="@style/DearOTextAppearance.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/emailThirdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+                    android:textColor="@color/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/streetThirdInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/third_party_label_building_street"
+                app:hintTextAppearance="@style/DearOTextAppearance.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/streetThirdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+                    android:textColor="@color/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/localityThirdInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/third_party_label_locality"
+                app:hintTextAppearance="@style/DearOTextAppearance.TextInputLayout">
+
+                <EditText
+                    android:id="@+id/localityThirdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+                    android:textColor="@color/textColorPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pincodeThirdInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:hint="@string/third_party_label_pincode"
+                    app:hintTextAppearance="@style/DearOTextAppearance.TextInputLayout">
+
+                    <EditText
+                        android:id="@+id/pincodeThirdView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+                        android:textColor="@color/textColorPrimary" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cityThirdInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:hint="@string/third_party_label_city"
+                    app:hintTextAppearance="@style/DearOTextAppearance.TextInputLayout">
+
+                    <EditText
+                        android:id="@+id/cityThirdView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:enabled="false"
+                        android:textAppearance="@style/DearOTextAppearance.SubtitleRegular" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorAccent"
+        android:text="@string/third_party_button_submit"
+        android:textColor="@color/white" />
+
+</FrameLayout>
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".othersyshistory.OtherSysHistoryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/includeCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <ImageView
+                        android:id="@+id/carIconImage"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_weight="0.2"
+                        android:minWidth="50dp"
+                        app:srcCompat="@drawable/ic_car"
+                        tools:ignore="ContentDescription,content" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:minWidth="350dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/registrationNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            tools:text="MH01AL7218" />
+
+                        <TextView
+                            android:id="@+id/registrationName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:textSize="14sp"
+                            tools:text="Maruti Suzuki Swift Dzire" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/infoImageView"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_weight="0.3"
+                        android:minWidth="50dp"
+                        android:padding="8dp"
+                        app:srcCompat="@drawable/ic_info_filled"
+                        tools:ignore="ContentDescription,content" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:minHeight="400dp">
+
+            <TextView
+                android:id="@+id/noHistoryView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/customer_vehicle_history_label_no_jobcard_history"
+                android:textAppearance="@style/DearOTextAppearance.SubtitleRegular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/historyView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:listitem="@layout/row_vehicle_history_jc"
+                tools:visibility="gone" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

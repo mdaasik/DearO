@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_top_bottom"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dimen_part_finder_padding_top_bottom"
+    android:paddingLeft="@dimen/dimen_part_finder_padding_left_right"
+    android:paddingRight="@dimen/dimen_part_finder_padding_left_right"
+    android:paddingTop="@dimen/dimen_part_finder_padding_top_bottom">
+
+    <TextView
+        android:id="@+id/partNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dimen_part_finder_title"
+        android:textColor="@color/black"
+        tools:text="Engine Oil" />
+
+
+    <TextView
+        android:id="@+id/descriptionView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="110dp"
+        android:textColor="@color/black"
+        tools:text="MFC Xpress 550041109 5W-40 API SN Sem synthetic Car Engine Oil"
+        android:textSize="@dimen/dimen_part_finder_description" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/partNumberView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.7"
+            tools:text="MFC-23dee8"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/stockView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            tools:text="INSTOCK"
+            android:textAlignment="center"
+            android:textColor="@color/forest_green"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_oil_type"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/timeslot_chip"
+        android:visibility="visible"
+        tools:text="Semi Synthetic Oil" />
+
+    <TextView
+        android:id="@+id/priceView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Rs.11,50,000"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_part_finder_part_rate" />
+
+    <TextView
+        android:id="@+id/remarkView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:text="Remark For the above Part"
+        tools:visibility="visible" />
+
+</LinearLayout>

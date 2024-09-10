@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:layout_marginTop="8dp"
+    app:elevation="5dp">
+
+    <RelativeLayout
+        android:id="@+id/caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_damage"
+            android:layout_width="match_parent"
+            android:padding="2dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:background="#4D000000"
+            android:drawableEnd="@drawable/ic_options"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            tools:text="@string/caption" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_damage"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:contentDescription="@string/clicked_images"
+            android:layout_below="@+id/tv_damage"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_cardamage" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

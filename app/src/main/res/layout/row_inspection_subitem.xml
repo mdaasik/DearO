@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_grey"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_title_inspection_subitem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.55"
+        android:text="Engine Oil"
+        android:textColor="@color/black" />
+
+    <CheckBox
+        android:id="@+id/cb_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15"
+        app:buttonTint="@color/check_box_green"
+        tools:ignore="MissingPrefix" />
+
+    <CheckBox
+        android:id="@+id/cb_average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15"
+        app:buttonTint="@color/check_box_yellow"
+        tools:ignore="MissingPrefix" />
+
+    <CheckBox
+        android:id="@+id/cb_poor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15"
+        app:buttonTint="@color/check_box_red"
+        tools:ignore="MissingPrefix" />
+
+
+</LinearLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/addEditPartParentView"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapseToolbarView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_add_edit_part_collapse_tb_min_height"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:id="@+id/partNameTitleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="@dimen/dimen_add_edit_part_name_margin_start"
+                android:background="?attr/colorPrimary"
+                android:gravity="start|center_vertical"
+                android:minHeight="@dimen/dimen_add_edit_part__name_parent_min_height"
+                android:orientation="vertical"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_edit_part_name"
+                    android:textAppearance="@style/DearOTextAppearance.Caption"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/partNameView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+                    android:textColor="@color/textColorPrimaryInverse"
+                    tools:text="@string/add_edit_tools_part_name" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/addPartToolbarView"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_anchor="@id/partNameTitleView"
+                app:layout_collapseMode="pin"
+                app:title=" ">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/partTitleView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.9"
+                        android:ellipsize="end"
+                        android:ems="15"
+                        android:gravity="start|center_vertical"
+                        android:maxLines="1"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        tools:text="@string/add_edit_tools_part_name" />
+
+                    <ImageView
+                        android:id="@+id/deleteView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="0.1"
+                        android:contentDescription="@string/add_edit_content_desc_delete_part"
+                        app:tint="@color/white"
+                        app:srcCompat="@drawable/ic_delete_black_24dp" />
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <LinearLayout
+            android:id="@+id/totalParentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/dimen_add_edit_part_name_margin_start"
+            android:background="?attr/colorPrimary"
+            android:gravity="start|center_vertical"
+            android:minHeight="@dimen/dimen_add_edit_part__total_parent_min_height"
+            android:orientation="vertical"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_edit_part_total_amount"
+                android:textAppearance="@style/DearOTextAppearance.Caption"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/totalView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_edit_tools_total_amount"
+                android:textAppearance="@style/DearOTextAppearance.H5.Regular"
+                android:textColor="@color/textColorPrimaryInverse" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <include
+        android:id="@+id/layoutAddPartNew"
+        layout="@layout/layout_add_part_new" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/searchFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/totalParentView"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/ic_search_white_24dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <include
+        android:id="@+id/layoutExtendedFab"
+        layout="@layout/layout_extended_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

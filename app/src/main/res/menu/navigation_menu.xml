@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/navigation_menu_home" />
+
+        <item
+            android:id="@+id/nav_job_card"
+            android:enabled="true"
+            android:title="@string/navigation_menu_job_card" />
+
+        <item
+            android:id="@+id/nav_repair_bills"
+            android:enabled="true"
+            android:title="@string/navigation_menu_repair_bills" />
+
+        <item
+            android:id="@+id/nav_appointments"
+            android:enabled="true"
+            android:title="@string/navigation_menu_appointment" />
+        <item
+            android:id="@+id/nav_amc"
+            android:title="@string/navigation_menu_amc"/>
+        <item
+            android:id="@+id/nav_otc"
+            android:enabled="true"
+            android:title="@string/navigation_menu_otc_sales" />
+
+        <item
+            android:id="@+id/nav_my_customers"
+            android:enabled="true"
+            android:title="@string/navigation_menu_my_customers" />
+
+        <item
+            android:id="@+id/nav_part_finder"
+            android:enabled="true"
+            android:title="@string/navigation_menu_part_finder" />
+
+        <item
+            android:id="@+id/nav_spares"
+            android:enabled="true"
+            android:title="@string/navigation_menu_spares" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_my_profile"
+            android:enabled="false"
+            android:title="@string/navigation_menu_my_profile" />
+
+        <item
+            android:id="@+id/nav_tc"
+            android:title="@string/navigation_menu_terms_and_condition" />
+
+        <item
+            android:id="@+id/pp"
+            android:title="@string/navigation_menu_privacy_policy" />
+
+
+        <item
+            android:id="@+id/nav_contact_us"
+            android:title="@string/navigation_menu_contact_us" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/navigation_menu_logout" />
+    </group>
+</menu>

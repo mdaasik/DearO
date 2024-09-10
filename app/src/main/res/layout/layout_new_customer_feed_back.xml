@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollable"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:isScrollContainer="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ratingParentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.carworkz.dearo.customerfeedback.NewCustomerFeedBackActivity">
+
+        <ImageView
+            android:id="@+id/likeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_circle"
+            android:padding="10dp"
+            app:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_thumb_up_black_24dp"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/customer_feedback_main_title"
+            android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/likeView" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView34">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_3" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_4" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_5" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_6" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_7" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_8" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_9" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedback10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/light_grey"
+                app:srcCompat="@drawable/ic_asset_10" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/customer_feedback_text_not_likely"
+            android:textAppearance="@style/DearOTextAppearance.Caption"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout10"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/customer_feedback_text_extreme_likely"
+            android:textAppearance="@style/DearOTextAppearance.Caption"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout10"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/customer_feedback_title_service_quality"
+            android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+        <RatingBar
+            android:id="@+id/serviceQualityBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:stepSize="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/customer_feedback_title_billing_transparency"
+            android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/serviceQualityBar" />
+
+        <RatingBar
+            android:id="@+id/billingTransparencyBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:stepSize="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/customer_feedback_title_timely_delivery"
+            android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/billingTransparencyBar" />
+
+        <RatingBar
+            android:id="@+id/timelyDeliveryBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:stepSize="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+        <TextView
+            android:id="@+id/commentLabelView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/customer_feedback_title_add_comment"
+            android:textAppearance="@style/DearOTextAppearance.Caption"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timelyDeliveryBar" />
+
+        <EditText
+            android:id="@+id/commentsView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="50dp"
+            android:ems="10"
+            android:hint="@string/customer_feedback_title_add_comment_hint"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:textAppearance="@style/DearOTextAppearance.SubtitleRegular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentLabelView"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/noCommentsView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/customer_feedback_title_no_comments"
+            android:textAppearance="@style/DearOTextAppearance.Body.Medium.B1"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timelyDeliveryBar"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/commentsGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="commentLabelView,commentsView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

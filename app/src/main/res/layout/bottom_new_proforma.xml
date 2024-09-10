@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/new_estimator_bottom"
+    android:background="@color/colorAccent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_add_item"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="@string/add_item"
+        android:textAllCaps="true"
+        android:textColor="@color/white" />
+
+    <View
+        android:id="@+id/spaceView"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_preview"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="@string/preview"
+        android:textColor="@color/white" />
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/cancelView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        app:srcCompat="@drawable/ic_clear_black_24dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:maxLines="2"
+        android:maxWidth="300dp"
+        android:minWidth="290dp"
+        android:textColor="@color/black"
+        tools:text="apsfapsmfa'lsmf'sasfa[skpfoaslams[flams[flma[slfma[slmfalsf" />
+
+    <CheckBox
+        android:id="@+id/cb_view_jc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:clickable="true"
+        android:focusable="true" />
+</LinearLayout>

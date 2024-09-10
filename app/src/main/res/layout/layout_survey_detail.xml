@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="details"
+            type="com.carworkz.dearo.domain.entities.Surveyor" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="8dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/accidental_hint_surveyor_name"
+                android:inputType="textPersonName"
+                android:text="@{details.name}"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/codeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/accidental_hint_surveyor_code"
+                android:inputType="text"
+                android:text="@{details.code}"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/numberView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/accidental_hint_surveyor_contact_number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:text="@{details.mobile}"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</layout>

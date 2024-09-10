@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/invoiceNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:gravity="start|center_vertical"
+            android:minHeight="50dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="INV:001"
+            android:textColor="@color/textColorDisabled" />
+
+        <TextView
+            android:id="@+id/invoiceDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_timer_grey_24dp"
+            android:gravity="center_vertical"
+            android:minHeight="50dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="JAN 17,2018"
+            android:textColor="@color/textColorDisabled" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separatorView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/light_grey" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:minWidth="350dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/registrationNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="MH06BY9769" />
+
+            <TextView
+                android:id="@+id/carNameType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tools:text="Maruti Suzuki - Swift Dzire - Petrol" />
+
+            <TextView
+                android:id="@+id/customerName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:textColor="@color/textColorDisabled"
+                android:textSize="14sp"
+                tools:text="Mehul Kadam" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

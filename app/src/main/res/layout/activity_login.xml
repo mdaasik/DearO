@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.carworkz.dearo.login.addmobilenumber.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.carworkz.dearo.login.addmobilenumber.LoginActivity"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp">
+
+            <ImageView
+                android:id="@+id/tv_login_dearO_title"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/dearO_logo"
+                android:textSize="@dimen/dimen_login_title"
+                android:textStyle="bold"
+                app:srcCompat="@drawable/ic_dearo_logo" />
+
+            <TextView
+                android:id="@+id/tv_login_version"
+                style="@style/TextViewLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/tv_login_dearO_title"
+                android:layout_below="@+id/tv_login_dearO_title"
+                android:layout_marginEnd="8dp"
+                tools:text="Version 1.2.5a" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_login_mobile_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/EtMobileNoLoginMargin"
+            android:background="@color/black_transparent"
+            android:hint="@string/mobile_number_hint"
+            android:inputType="phone"
+            android:maxHeight="30dp"
+            android:maxLines="1"
+            android:padding="@dimen/EtMobileNoLoginPadding"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:importantForAutofill="no"
+            android:textSize="@dimen/EditTextLoginTextSize"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/btn_login_next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ButtonLoginHeight"
+            android:layout_marginLeft="@dimen/ButtonLoginMarginLR"
+            android:layout_marginRight="@dimen/ButtonLoginMarginLR"
+            android:layout_marginTop="@dimen/ButtonLoginMarginTop"
+            android:background="@color/colorPrimary"
+            android:text="@string/login_button_next"
+            android:textColor="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tv_disclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/terms_string"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_disclaimer"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tAndC"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="0.5"
+                    android:maxLines="1"
+                    android:text="@string/termsAndConditions"
+                    android:textAlignment="textEnd"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/policy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:maxLines="1"
+                    android:text="@string/policy"
+                    android:textAlignment="viewStart"
+
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_login"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

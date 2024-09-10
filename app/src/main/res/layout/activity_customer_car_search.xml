@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.carworkz.dearo.addjobcard.createjobcard.customercarsearch.CustomerCarSearchActivity">
+
+    <include
+        android:id="@+id/baseLayout"
+        layout="@layout/base_layout"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/initJobcardView"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/formMarginHorizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="28dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:minHeight="150dp"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/vehicleImageView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            app:srcCompat="@drawable/ic_directions_car_white_24dp"
+                            tools:ignore="ContentDescription" />
+
+                        <EditText
+                            android:id="@+id/registerNumberView"
+                            style="@style/DearOEditTextTheme.Inverse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_weight="0.8"
+                            android:hint="@string/customer_car_search_title_registration_number"
+                            android:inputType="textCapCharacters"
+                            android:textAllCaps="true"
+                            android:textSize="18sp"
+                            tools:ignore="Autofill,TextFields"
+                            tools:text="MH00XX0000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="@dimen/formMarginHorizontal"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.2"
+                            app:srcCompat="@drawable/ic_call_white_24dp"
+                            tools:ignore="ContentDescription" />
+
+                        <EditText
+                            android:id="@+id/numberView"
+                            style="@style/DearOEditTextTheme.Inverse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_weight="0.8"
+                            android:drawableEnd="@drawable/ic_contacts_white_24dp"
+                            android:hint="@string/customer_car_search_title_phone_number"
+                            android:inputType="phone"
+                            tools:ignore="Autofill"
+                            tools:text="9000000000" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/searchView"
+                    style="@style/DearOButton.Fill.Drawable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:background="@drawable/chip_button"
+                    android:drawableStart="@drawable/ic_search_white_24dp"
+                    android:text="@string/customer_car_search_btn_title_search"
+                    tools:ignore="MissingPrefix" />
+            </FrameLayout>
+            <!--numberMisMatch-->
+            <LinearLayout
+                android:id="@+id/numberMisMatchParentView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/mobileParentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:background="@drawable/error_back"
+                    android:orientation="vertical"
+                    tools:visibility="visible">
+
+                    <TextView
+                        style="@style/DearOTextAppearance.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/customer_car_search_hint_mobile_number" />
+
+                    <TextView
+                        android:id="@+id/mobileView"
+                        style="@style/DearOTextAppearance.Body.Regular.B1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_error_12dp"
+                        tools:text="Mobile Number" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/DearOTextAppearance.Error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/errorVerticalPadding"
+                    android:layout_marginEnd="@dimen/errorVerticalPadding"
+                    android:text="@string/customer_car_search_title_number_mismatch"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/numberCorrectionView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:layout_marginBottom="6dp"
+                    android:orientation="horizontal"
+                    tools:visibility="visible">
+
+                    <Button
+                        android:id="@+id/alternateNumberView"
+                        style="@style/DearOButton.Outline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="0.5"
+                        android:text="@string/customer_car_search_title_add_alternate" />
+
+                    <Button
+                        android:id="@+id/updateNumberView"
+                        style="@style/DearOButton.Outline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="0.5"
+                        android:text="@string/customer_car_search_title_update_number" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    tools:visibility="visible" />
+            </LinearLayout>
+            <!--customerParent-->
+            <LinearLayout
+                android:id="@+id/customerParentView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/customerDetailsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:layout_marginBottom="6dp"
+                    android:orientation="vertical"
+                    tools:visibility="visible">
+
+                    <TextView
+                        style="@style/DearOTextAppearance.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/customer_car_search_title_customer_name" />
+
+                    <TextView
+                        android:id="@+id/nameView"
+                        style="@style/DearOTextAppearance.Body.Regular.B1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Sharan Shetty" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/customerAddressParentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:layout_marginBottom="6dp"
+                    android:orientation="vertical"
+                    tools:visibility="visible">
+
+                    <TextView
+                        style="@style/DearOTextAppearance.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/customer_car_search_label_address" />
+
+                    <TextView
+                        android:id="@+id/addressView"
+                        style="@style/DearOTextAppearance.Body.Regular.B1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="271 Business Park, Goregaon East" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/customerErrorView"
+                    style="@style/DearOTextAppearance.Error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/customer_car_search_title_customer_not_found"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <Button
+                    android:id="@+id/createCustomerView"
+                    style="@style/DearOButton.Outline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/customer_car_search_create_customer" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider" />
+            </LinearLayout>
+            <!--vehicleDetails-->
+            <LinearLayout
+                android:id="@+id/vehicleDetailsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/formMarginHorizontal"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="@dimen/formMarginHorizontal"
+                android:layout_marginBottom="6dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    style="@style/DearOTextAppearance.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customer_car_search_label_vehicle_make_model" />
+
+                <TextView
+                    android:id="@+id/vehicleNameView"
+                    style="@style/DearOTextAppearance.Body.Regular.B1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Maruti Suzuki Swift Dzire VDi" />
+            </LinearLayout>
+
+            <!--vehicleNotFound-->
+            <LinearLayout
+                android:id="@+id/vehicleNotFoundView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/vehicleErrorView"
+                    style="@style/DearOTextAppearance.Error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/customer_car_search_label_add_vehicle_details" />
+
+                <Button
+                    android:id="@+id/addVehicleView"
+                    style="@style/DearOButton.Outline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:layout_marginBottom="6dp"
+                    android:enabled="false"
+                    android:text="@string/customer_car_search_label_add_vehicle_details" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                tools:visibility="visible" />
+            <!--jcType-->
+            <LinearLayout
+                android:id="@+id/jcTypeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    style="@style/DearOTextAppearance.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/customer_car_search_label_select_jc_type" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/periodicView"
+                        style="@style/DearORadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/customer_car_search_title_periodic"
+                        android:textAlignment="textStart" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/majorView"
+                        style="@style/DearORadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/customer_car_search_title_major"
+                        android:textAlignment="textStart" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/minorView"
+                        style="@style/DearORadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/customer_car_search_title_minor"
+                        android:textAlignment="textStart" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/accidentalView"
+                        style="@style/DearORadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/customer_car_search_title_accidental"
+                        android:textAlignment="textStart" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/formMarginHorizontal"
+                    android:layout_marginEnd="@dimen/formMarginHorizontal"
+                    android:orientation="horizontal">
+
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/amcsmcView"
+                        style="@style/DearORadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/customer_car_search_title_amcsmc"
+                        android:textAlignment="textStart" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--AMC-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
+            <LinearLayout
+                android:id="@+id/amcDetailsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/formMarginHorizontal"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="@dimen/formMarginHorizontal"
+                android:layout_marginBottom="6dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    style="@style/DearOTextAppearance.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/navigation_menu_amc" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/amcSelectorRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/row_amc_selector_listing" />
+            </LinearLayout>
+
+            <!--service history View-->
+            <LinearLayout
+                android:id="@+id/historyViewLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/headingBackground">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/search_screen_row_min_height"
+                        android:layout_marginStart="@dimen/formMarginHorizontal"
+                        android:gravity="center_vertical"
+                        android:text="Recent Jobcard"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/historyView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/row_vehicle_history_jc"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/historyButtonLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <Button
+                        android:id="@+id/moreHistory"
+                        style="@style/DearOButton.Outline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/formMarginHorizontal"
+                        android:layout_marginEnd="@dimen/buttonDrawablePadding"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:text="@string/customer_car_search_label_more_history"
+                        android:visibility="invisible"
+                        tools:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/otherHistory"
+                        style="@style/DearOButton.Outline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/buttonDrawablePadding"
+                        android:layout_marginEnd="@dimen/formMarginHorizontal"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:text="@string/customer_car_search_label_other_history"
+                        android:visibility="invisible"
+                        tools:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/initJobcardView"
+        style="@style/DearOButton.Fill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:text="@string/customer_car_search_init_jobcard"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</RelativeLayout>

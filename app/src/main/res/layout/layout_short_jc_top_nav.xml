@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topNavParentView"
+    android:layout_width="match_parent"
+    android:background="@color/light_grey"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:minHeight="@dimen/dimen_quick_job_card_nav_min_size"
+    android:padding="@dimen/dimen_quick_job_card_nav_padding">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/navItemRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_short_top_nav_bar" />
+</LinearLayout>

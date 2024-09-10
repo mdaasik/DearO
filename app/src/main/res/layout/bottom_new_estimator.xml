@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/new_estimator_bottom"
+    android:background="@color/white"
+    android:gravity="center"
+    android:layout_gravity="bottom"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_add_item"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="@string/add_item"
+        android:textColor="@color/white" />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:id="@+id/ll_estimator_view_details"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_part_finder_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            tools:text="11,20,000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/view_details"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

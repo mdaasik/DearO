@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorAccent"
+    android:elevation="8dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/selectedJobTextView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+        android:textColor="@color/textColorPrimaryInverse"
+        tools:text="5 Selected" />
+
+
+    <LinearLayout
+        android:id="@+id/addToJobView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        android:gravity="center_vertical|end">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/addToTitleView"
+            tools:text="@string/search_screen_add_to_job"
+            android:textAllCaps="true"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            android:textColor="@color/textColorPrimaryInverse" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

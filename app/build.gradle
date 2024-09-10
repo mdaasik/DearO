@@ -1,0 +1,297 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'realm-android'
+//apply plugin: 'io.realm.kotlin'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'org.jetbrains.dokka-android'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties
+        .load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdk 34
+    buildToolsVersion '33.0.0'
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        buildConfig = true
+    }
+
+    /*androidExtensions {
+        experimental = true
+    }*/
+
+    signingConfigs {
+        'config' {
+            storeFile file(keystoreProperties["storeFile"])
+            storePassword keystoreProperties["storePassword"]
+            keyAlias keystoreProperties["keyAlias"]
+            keyPassword keystoreProperties["keyPassword"]
+        }
+    }
+    defaultConfig {
+        applicationId "com.carworkz.dearo"
+        minSdkVersion 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        signingConfig signingConfigs.config
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+//        ndk {
+//            abiFilters "armeabi-v7a", "x86", "armeabi", "mips", "arm64-v8a", "x86_64"
+//        }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        carDevelopment {
+            applicationId "com.carworkz.dearo.development"
+            dimension "default"
+            versionCode 256
+            versionName "D-2.99.2"
+            manifestPlaceholders = [appIcon: "@mipmap/ic_launcher_car_debug_round",
+                                    appName: "DearO"]
+            buildConfigField "Boolean", "ENABLE_LEAK_CANARY", "false"
+            buildConfigField "Boolean", "ENABLE_STETHO", "true"
+            buildConfigField "Boolean", "ENABLE_TINY_DANCER", "false"
+            buildConfigField "Boolean", "ENABLE_CRASHLYTICS", "true"
+//                            buildConfigField "String", "BASE_URL", '"https://13.235.251.185:4005/"'
+//                            buildConfigField "String", "BASE_URL", '"https://13.235.251.185:4010/"'
+//                            buildConfigField "String", "BASE_URL", '"https://13.235.251.185:4010/"'
+            // buildConfigField "String", "BASE_URL", '"https://192.168.55.32:4200/"'
+            buildConfigField "String", "BASE_URL", '"https://api.dearo.in/"' //RISKY
+            buildConfigField "String", "BASE_WEB_URL", '"https://devweb.dearo.in/   "'
+            buildConfigField "String", "NotificationVersion", '"1.0.0"'
+            manifestPlaceholders = [appIcon: "@mipmap/ic_launcher_car_debug_round",
+                                    appName: "DearO"]
+            targetSdkVersion 30
+            minSdkVersion 26
+        }
+        carProduction {
+            applicationId "com.carworkz.dearo"
+            dimension "default"
+            versionCode 126//125
+            versionName "2.24.14"//2.24.13
+            manifestPlaceholders = [appIcon: "@mipmap/ic_launcher_round",
+                                    appName: "DearO"]
+            buildConfigField "Boolean", "ENABLE_LEAK_CANARY", "false"
+            buildConfigField "Boolean", "ENABLE_STETHO", "false"
+            buildConfigField "Boolean", "ENABLE_TINY_DANCER", "false"
+            buildConfigField "Boolean", "ENABLE_CRASHLYTICS", "true"
+            buildConfigField "String", "BASE_URL", '"https://api.dearo.in/"'
+            buildConfigField "String", "BASE_WEB_URL", '"https://ws.dearo.in/"'
+            buildConfigField "String", "NotificationVersion", '"1.0.0"'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            applicationIdSuffix '.debug'
+            debuggable true
+            buildConfigField "Boolean", "ENABLE_LOCAL_URL", "true"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+            def buildTime = new GregorianCalendar().format("MM-dd-yyyy' 'h:mm:ss a z")
+            buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+            buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
+
+            FirebasePerformance {
+                // Set this flag to 'false' to disable @AddTrace annotation processing and
+                // automatic HTTP/S network request monitoring
+                // for a specific build variant at compile time.
+                instrumentationEnabled false
+            }
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            buildConfigField "Boolean", "ENABLE_LOCAL_URL", "false"
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+            def buildTime = new GregorianCalendar().format("MM-dd-yyyy' 'h:mm:ss a z")
+            buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+            buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
+        }
+    }
+
+    sourceSets { main { resources.srcDirs = ['src/main/resources', 'src/test/resources/'] } }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            //unitTests.returnDefaultValues = true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+
+        kotlinOptions {
+            jvmTarget = '1.8'
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def project = "DearO"
+            def SEP = "_"
+            //def buildType = variant.variantData.variantConfiguration.buildType.name
+            def version = variant.versionName
+            def code = variant.versionCode
+            def date = new Date()
+            def formattedDate = date.format('ddMMyy_HHmm')
+
+            def newApkName = project + SEP + "(" + code + ")" + version + SEP + formattedDate + ".apk"
+
+            outputFileName = new File(newApkName)
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dokka {
+        outputFormat = 'html'
+        outputDirectory = "$buildDir/javadoc"
+    }
+    ndkVersion '22.1.7171670'
+    dependenciesInfo {
+        includeInBundle true
+        includeInApk true
+    }
+    namespace 'com.carworkz.dearo'
+
+    realm {
+        syncEnabled = false
+    }
+}
+dependencies {
+
+    implementation 'com.google.android.material:material:1.4.0'
+    //local library
+    implementation project(path: ':library')
+    implementation 'com.google.android.play:core-ktx:1.8.1'
+    implementation 'androidx.activity:activity:1.9.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //Test Impl
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.coroutines"
+    testImplementation "org.mockito:mockito-core:2.25.0"
+
+    //AndroidX
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //okHTTP
+    implementation "com.squareup.okhttp3:logging-interceptor:4.12.0"
+    // implementation "com.squareup.okhttp3:okhttp:4.12.0"
+    implementation('com.squareup.okhttp3:okhttp:4.12.0') {
+        exclude group: 'com.squareup.okio', module: 'okio'
+    }
+
+    //EventBus
+    implementation "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
+    //MOSHI
+    implementation "com.squareup.moshi:moshi:1.8.0"
+    implementation "com.squareup.moshi:moshi-kotlin:1.8.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.6.0"
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.0.0')
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    //Timber for logging
+    implementation 'com.jakewharton.timber:timber:4.5.1'
+    //Glide -> Image loading
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.0.0-RC0'
+    //Firebase
+    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseCoreVersion"
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-perf:20.0.4'
+    //Kotlin
+    /*implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.coroutines"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.10"*/
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.0.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.9.20"
+    //Google
+    implementation "com.google.android.gms:play-services-base:18.0.1"
+    implementation "com.google.android.gms:play-services-auth:20.0.0"
+    //Signature Pad
+//    implementation "com.github.gcacace:signature-pad:1.2.1"
+    //Floating Action Button
+    implementation "com.github.clans:fab:1.6.4"
+    //Expandable RecyclerView
+//    implementation "com.thoughtbot:expandablerecyclerview:1.3"
+    api('com.github.thoughtbot:expandable-recycler-view:v1.4') {
+        exclude group: 'com.thoughtbot', module: 'expandablerecyclerview'
+    }
+    //Facebook
+    debugImplementation "com.facebook.stetho:stetho:1.5.0"
+    implementation 'com.facebook.network.connectionclass:connectionclass:1.0.1'
+    implementation "com.facebook.stetho:stetho-okhttp3:1.5.0"
+    // Retrofit and Timber
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation 'com.jakewharton.timber:timber:4.5.1'
+    //PhotoView
+    implementation "com.github.chrisbanes:PhotoView:2.0.0"
+    //File Picker
+//    implementation 'com.ifarhanpatel:filepicker:1.0.0'
+//    implementation 'com.droidninja:filepicker:2.2.5'
+    //Dagger
+    implementation "com.google.dagger:dagger:2.27"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.11"
+    kapt "com.google.dagger:dagger-compiler:2.11"
+    //PR Downloader
+//    implementation "com.mindorks.android:prdownloader:0.6.0"
+    //Tiny Dancer
+    debugImplementation "com.github.brianPlummer:tinydancer:0.1.2"
+    //Leak Canary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:1.5.1"
+
+    implementation("javax.annotation:javax.annotation-api:1.3.2")
+    annotationProcessor("javax.annotation:javax.annotation-api:1.3.2")
+
+    //AndroidView Library by MehulKD on github
+    implementation 'com.github.MehulKD:ViewAndroid:0.1.0'
+
+    //Screen Size Dp & Sp
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+
+    //CarPM SDK
+    implementation('com.github.zymbia-carpm:garagepro_sdk:v0.1.2') {
+        transitive = true
+    }
+}

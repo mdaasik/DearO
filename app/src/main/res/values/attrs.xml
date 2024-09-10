@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable
+        name="Toggle">
+
+        <attr
+            name="textOn"
+            format="string"/>
+
+        <attr
+            name="textOff"
+            format="string"/>
+
+        <attr
+            name="colorOff"
+            format="color"/>
+        <attr
+            name="colorCircleOff"
+            format="color"/>
+        <attr
+            name="colorCircleOn"
+            format="color"/>
+
+        <attr
+            name="colorOn"
+            format="color"/>
+
+        <attr
+            name="colorBorder"
+            format="color"/>
+
+        <attr
+            name="colorDisabled"
+            format="color"/>
+
+        <attr name="on"
+            format="boolean"/>
+
+        <attr name="android:textSize"/>
+
+        <attr name="android:enabled"/>
+    </declare-styleable>
+</resources>

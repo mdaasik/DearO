@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:http="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cd_parent_job_listing"
+    android:layout_margin="@dimen/row_job_card_listing_margin"
+    android:background="@color/white">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/row_job_card_listing_padding">
+
+        <TextView
+            android:id="@+id/tv_jc_listing_jcno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/tv_jc_listing_jcno_margin_top"
+            android:background="@drawable/shape_chip"
+            android:text="JC:001"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_jc_listing_car_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_jc_listing_jcno"
+            android:layout_below="@+id/tv_jc_listing_jcno"
+            android:layout_marginTop="@dimen/tv_jc_listing_car_no_margin_top"
+            android:textColor="@color/black"
+            android:text="MH01 AQ 7154"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_jc_listing_make_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_jc_listing_car_no"
+            android:layout_below="@+id/tv_jc_listing_car_no"
+            android:layout_marginTop="@dimen/tv_jc_listing_make_model_margin_top"
+            android:textColor="@color/black"
+            tools:text="Maruti Suzuki-Swift Dzire-Petrol" />
+
+        <TextView
+            android:id="@+id/tv_jc_listing_customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_jc_listing_make_model"
+            android:layout_below="@+id/tv_jc_listing_make_model"
+            tools:text="Atul More" />
+
+        <ImageView
+            android:id="@+id/iv_jc_listing_call"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/tv_jc_listing_make_model"
+            app:srcCompat="@drawable/ic_call_black_24dp"
+            android:contentDescription="@string/call_button" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:id="@+id/rl_time_amount_parent"
+            android:layout_below="@+id/tv_jc_listing_customer_name">
+
+            <ImageView
+                android:id="@+id/iv_jc_listing_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/iv_jc_listing_timer_margin_top"
+                app:srcCompat="@drawable/ic_timer_black_24dp"
+                android:contentDescription="@string/clock" />
+
+            <TextView
+                android:id="@+id/tv_jc_listing_time_remaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/iv_jc_listing_timer"
+                android:layout_marginStart="@dimen/iv_jc_listing_time_remaining_margin_left"
+                android:layout_toEndOf="@+id/iv_jc_listing_timer"
+                tools:text="2:00 hrs ago"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <TextView
+                android:id="@+id/tv_jc_listing_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_jc_listing_time_remaining"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/tv_jc_listing_money_margin_end"
+                tools:text="10,000" />
+
+            <ImageView
+                android:id="@+id/iv_jc_listing_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_jc_listing_money"
+                android:layout_marginEnd="@dimen/iv_jc_listing_money_margin_end"
+                android:layout_toStartOf="@+id/tv_jc_listing_money"
+                app:srcCompat="@drawable/ic_money"
+                android:contentDescription="@string/money" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

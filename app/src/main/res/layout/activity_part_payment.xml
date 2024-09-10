@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:paddingBottom="10dp"
+        android:orientation="vertical"
+        tools:context="com.carworkz.dearo.partpayment.PartPaymentActivity">
+
+        <LinearLayout
+            android:id="@+id/addPaymentDetailParentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/part_payment_default_row_height"
+                android:background="@color/backgroundGrey"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main">
+
+                <TextView
+                    android:id="@+id/totalAmountDueView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                    android:textColor="@color/textColorPrimary"
+                    tools:text="Total Amount Due is Rs 800.00" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:minHeight="72dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main"
+                android:weightSum="1">
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="0.5"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/part_payment_amount"
+                        android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+
+                    <EditText
+                        android:id="@+id/amountView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_split_invoice"
+                        android:hint="@string/part_payment_hint_enter_amount"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:minHeight="?android:attr/listPreferredItemHeight"
+                        android:padding="5dp"
+                        android:selectAllOnFocus="true"
+                        android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                        android:textColor="@color/textColorPrimary"
+                        tools:targetApi="o" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/part_payment_received_payment"
+                        android:textAppearance="@style/DearOTextAppearance.Caption" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/paymentMethodView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_split_invoice"
+                        android:minHeight="?android:attr/listPreferredItemHeight"
+                        android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                        android:textColor="@color/textColorPrimary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Bank Name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/bankNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:minHeight="72dp"
+                android:visibility="gone"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main">
+
+                <EditText
+                    android:id="@+id/bankName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/bank_name"
+                    android:importantForAutofill="no"
+                    android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                    android:inputType="text"
+                    android:textColor="@color/textColorPrimary"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+           <!--Card Number-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cardNumberLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                android:minHeight="72dp"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main">
+
+                <EditText
+                    android:id="@+id/cardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/card_number"
+                    android:importantForAutofill="no"
+                    android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                    android:inputType="number"
+                    android:textColor="@color/textColorPrimary"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+               <!--Cheque Date -->
+            <LinearLayout
+                android:id="@+id/chequeDateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:minHeight="72dp"
+                android:visibility="visible"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drawn_on_date" />
+
+                    <TextView
+                        android:id="@+id/drawnDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:text="@string/dummy_date"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cheque_date" />
+
+                    <TextView
+                        android:id="@+id/chequeDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:text="@string/dummy_date"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Cheque Number -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/chequeNumberLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                android:minHeight="72dp"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main">
+
+                <EditText
+                    android:id="@+id/chequeNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/cheque_number"
+                    android:importantForAutofill="no"
+                    android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                    android:inputType="number"
+                    android:textColor="@color/textColorPrimary"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+           <!--Transaction Number-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/transactionNumberLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                android:minHeight="72dp"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main">
+
+                <EditText
+                    android:id="@+id/transactionNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/transaction_number"
+                    android:importantForAutofill="no"
+                    android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                    android:inputType="text"
+                    android:textColor="@color/textColorPrimary"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--Transaction Details-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/transactionDetailsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                android:minHeight="72dp"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main">
+
+                <EditText
+                    android:id="@+id/transactionDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/transaction_details"
+                    android:importantForAutofill="no"
+                    android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                    android:inputType="text"
+                    android:textColor="@color/textColorPrimary"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--Remarks-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/remarkLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:minHeight="72dp"
+                android:paddingStart="@dimen/part_payment_padding_main"
+                android:paddingEnd="@dimen/part_payment_padding_main">
+
+                <EditText
+                    android:id="@+id/remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/remarks"
+                    android:importantForAutofill="no"
+                    android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                    android:inputType="text"
+                    android:textColor="@color/textColorPrimary"
+                    tools:targetApi="o" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/updatePaymentButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/part_payment_padding_main"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/part_payment_padding_main"
+                android:background="@color/colorAccent"
+                android:text="@string/part_payment_title_update_payment"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/part_payment_default_row_height"
+            android:layout_marginTop="8dp"
+            android:background="@color/backgroundGrey"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/part_payment_padding_main"
+            android:paddingEnd="@dimen/part_payment_padding_main">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/part_payment_receival_details"
+                android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+                android:textColor="@color/textColorPrimary" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/partPaymentDetailsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <include
+            android:id="@+id/layPartPaySummary"
+            layout="@layout/layout_part_payment_summary" />
+
+
+    </LinearLayout>
+
+</ScrollView>

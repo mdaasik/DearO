@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroundGrey"
+    android:orientation="vertical"
+    android:layout_width="match_parent">
+
+    <include
+        android:id="@+id/baseLayout"
+        layout="@layout/base_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/M_margin_small"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_success_circle"
+                android:layout_width="24dp"
+                android:scaleType="fitXY"
+                android:layout_height="24dp"/>
+            <TextView
+                style="@style/DearOTextAppearance.Body.Medium"
+                android:layout_marginStart="4dp"
+                android:id="@+id/textView58"
+                android:textColor="@color/forest_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/successful" />
+        </LinearLayout>
+        <View
+            android:id="@+id/view17"
+            android:layout_marginStart="@dimen/M_margin_mid"
+            android:layout_marginEnd="@dimen/M_margin_mid"
+            android:background="@color/bg_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/textView57"
+            android:gravity="center_horizontal"
+            android:layout_margin="@dimen/M_margin_smallest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/amount" />
+
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/amcAmount"
+            style="@style/DearOTextAppearance.H6.Medium"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/dummy_amount" />
+
+        <TextView
+            android:id="@+id/viewDetails"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="@dimen/M_margin_smallest"
+            style="@style/DearOTextAppearance.Body.Regular"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dearo_margin_normal"
+            android:text="@string/view_invoice" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/M_HEIGHT_OR_WIDTH_SMALL"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/M_PADDING_LARGE"
+        android:padding="@dimen/M_PADDING_SMALLEST"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/amcCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/DearOTextAppearance.SubtitleMedium"
+                android:text="Gold AMC" />
+
+            <TextView
+                android:id="@+id/amcPackageDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimary"
+                style="@style/DearOTextAppearance.Body.Regular"
+                android:gravity="end"
+                android:text="@string/details"/>
+        </LinearLayout>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/benefitList"
+           android:divider="@null"
+           android:dividerHeight="0dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+        <View
+            android:layout_marginStart="@dimen/dearo_margin_normal"
+            android:layout_marginEnd="@dimen/dearo_margin_normal"
+            android:background="@color/bg_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/amcExpiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/M_margin_large"
+            android:layout_marginTop="@dimen/M_margin_mid"
+            android:layout_marginBottom="@dimen/M_margin_mid"
+            tools:text="Expires On Tue, 4MAy, 2021" />
+
+    </LinearLayout>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textView54"
+        android:layout_width="match_parent"
+        style="@style/DearOTextAppearance.SubtitleMedium"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/M_padding_small"
+        android:layout_height="@dimen/M_HEIGHT_OR_WIDTH_MID"
+        android:text="@string/summary" />
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="@dimen/M_PADDING_LARGE"
+        android:paddingEnd="@dimen/M_PADDING_LARGE"
+        android:padding="@dimen/M_PADDING_SMALLEST"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/subtotal" />
+
+            <TextView
+                android:id="@+id/subtotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="Rs.2500" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tax" />
+
+            <TextView
+                android:id="@+id/tax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="Rs.0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/discount" />
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="Rs.6000" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="@dimen/M_margin_smallest"
+            android:layout_marginBottom="@dimen/M_margin_smallest"
+            android:layout_marginStart="@dimen/dearo_margin_normal"
+            android:layout_marginEnd="@dimen/dearo_margin_normal"
+            android:background="@color/bg_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/DearOTextAppearance.Body.Regular.B1"
+                android:text="@string/total" />
+
+            <TextView
+                android:id="@+id/total"
+                style="@style/DearOTextAppearance.Body.Regular.B1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                tools:text="Rs.2500" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

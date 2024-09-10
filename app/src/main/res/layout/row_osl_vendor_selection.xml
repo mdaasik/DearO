@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_quantity"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/profroma_border"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:ignore="LabelFor">
+
+    <TextView
+        android:id="@+id/labourText"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:background="@android:color/transparent"
+        android:padding="4dp"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/DearOTextAppearance.Caption"
+        android:textColor="@color/textColorPrimary"
+        tools:text="@string/sample_inventory_item" />
+
+    <com.carworkz.dearo.NoDefaultSpinner
+        android:id="@+id/vendorSpinner"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:layout_weight="0.5"
+        android:background="@drawable/proforma_hsn_spinner"
+        android:gravity="center_vertical"
+        android:padding="1dp"
+        android:spinnerMode="dialog"
+        tools:listitem="@layout/simple_units_picker_item" />
+</LinearLayout>

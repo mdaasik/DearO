@@ -1,0 +1,51 @@
+<resources>
+    <dimen name="M_HEIGHT_OR_WIDTH_SMALLEST">16dp</dimen>
+    <dimen name="M_HEIGHT_OR_WIDTH_SMALL">24dp</dimen>
+    <dimen name="M_HEIGHT_OR_WIDTH_MID">32dp</dimen>
+    <dimen name="M_HEIGHT_OR_WIDTH_LARGE">40dp</dimen>
+    <dimen name="M_HEIGHT_OR_WIDTH_LARGEST">48dp</dimen>
+    <dimen name="M_HEIGHT_OR_WIDTH_XL">64dp</dimen>
+    <dimen name="M_HEIGHT_OR_WIDTH_XXL">100dp</dimen>
+    <dimen name="M_HEIGHT_OR_WIDTH_XXXL">150dp</dimen>
+        <!--******HERE ALL TEXT SIZES USED FOR APP******************-->
+        <dimen name="M_TEXT_SIZE_SMALLEST">16sp</dimen>
+        <dimen name="M_TEXT_SIZE_SMALL">20sp</dimen>
+        <dimen name="M_TEXT_SIZE_MID">24sp</dimen>
+        <dimen name="M_TEXT_SIZE_LARGE">28sp</dimen>
+        <dimen name="M_TEXT_SIZE_LARGEST">32sp</dimen>
+        <dimen name="M_TEXT_SIZE_XL">36sp</dimen>
+        <dimen name="M_TEXT_SIZE_XXL">40sp</dimen>
+        <dimen name="M_TEXT_SIZE_XXXL">50sp</dimen>
+        <!--********************************************************-->
+
+
+        <!--******HERE ALL MARGINS USED IN APP**********************-->
+        <dimen name="M_margin_tiny">4dp</dimen>
+        <dimen name="M_margin_smallest">8dp</dimen>
+        <dimen name="M_margin_small">16dp</dimen>
+        <dimen name="M_margin_mid">24dp</dimen>
+        <dimen name="M_margin_large">32dp</dimen>
+        <dimen name="M_margin_largest">40dp</dimen>
+        <!--********************************************************-->
+
+
+        <!--******HERE ALL PADDINGS USED IN APP**********************-->
+        <dimen name="M_PADDING_SMALLEST">8dp</dimen>
+        <dimen name="M_padding_small">16dp</dimen>
+        <dimen name="M_padding_mid">24dp</dimen>
+        <dimen name="M_PADDING_LARGE">32dp</dimen>
+        <dimen name="M_padding_largest">40dp</dimen>
+        <!--********************************************************-->
+
+
+        <!--******HERE ALL RADIUS USED IN APP**********************-->
+        <dimen name="radius_smallest">8dp</dimen>
+        <dimen name="radius_small">12dp</dimen>
+        <dimen name="radius_mid">16dp</dimen>
+        <dimen name="radius_large">20dp</dimen>
+        <dimen name="radius_largest">24dp</dimen>
+        <!--********************************************************-->
+
+        <dimen name="osp_image_height">120dp</dimen>
+        <!--********************************************************-->
+</resources>

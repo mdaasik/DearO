@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/pb_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:context="com.carworkz.dearo.invoices.invoiceremarks.InvoiceRemarksActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/backgroundGrey"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/note"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <com.carworkz.dearo.customviews.toggle.widget.LabeledSwitch
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="top"
+                        android:enabled="false"
+                        app:colorBorder="@color/white"
+                        app:colorCircleOff="@color/white"
+                        app:colorCircleOn="@color/white"
+                        app:colorOff="@color/switch_yellow"
+                        app:colorOn="@color/switch_red"
+                        app:on="true"
+                        app:textOff=""
+                        app:textOn="" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/invoice_remark_red_note"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <com.carworkz.dearo.customviews.toggle.widget.LabeledSwitch
+                        android:layout_width="30dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="top"
+                        android:enabled="false"
+                        app:colorBorder="@color/white"
+                        app:colorCircleOff="@color/white"
+                        app:colorCircleOn="@color/white"
+                        app:colorOff="@color/switch_yellow"
+                        app:colorOn="@color/switch_red"
+                        app:on="false"
+                        app:textOff=""
+                        app:textOn="" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/invoice_remark_yellow_note"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/addedItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/addItemView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_vertical"
+                android:minHeight="40dp"
+                android:onClick="onClick"
+                android:text="+Add Remarks"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

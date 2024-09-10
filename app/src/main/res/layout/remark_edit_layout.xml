@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.carworkz.dearo.customviews.toggle.widget.LabeledSwitch
+        android:id="@+id/switchView"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:textSize="12sp"
+        app:colorBorder="@color/white"
+        app:on="false"
+        app:colorCircleOff="@color/white"
+        app:colorCircleOn="@color/white"
+        app:colorOff="@color/switch_yellow"
+        app:colorOn="@color/switch_red"
+        app:textOff=""
+        app:textOn="" />
+
+    <EditText
+        android:id="@+id/editView"
+        android:layout_width="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:backgroundTint="@color/edit_selector"
+        android:drawablePadding="15dp"
+        android:hint="@string/remarks_hint"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="textCapWords"
+        android:singleLine="true"
+        android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+        tools:targetApi="o" />
+
+    <ImageButton
+        android:id="@+id/clearView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:background="@android:color/transparent"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ic_close_delete_black_24dp"
+        tools:ignore="ContentDescription"
+        tools:visibility="visible" />
+</LinearLayout>

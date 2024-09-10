@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--TOP LAYOUT-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/M_HEIGHT_OR_WIDTH_XXL"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/amcAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/M_HEIGHT_OR_WIDTH_LARGE"
+            android:layout_marginStart="@android:dimen/app_icon_size"
+            android:background="@drawable/border_split_invoice"
+            android:hint="@string/dummy_amount"
+            android:padding="10dp"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/discountListView"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/M_HEIGHT_OR_WIDTH_LARGE"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/border_split_invoice"
+            android:spinnerMode="dialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/amcAmount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/discountView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/M_HEIGHT_OR_WIDTH_LARGE"
+            android:background="@drawable/border_split_invoice"
+            android:digits="0123456789."
+            android:ems="10"
+            android:hint="@string/discount"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:minWidth="100dp"
+            android:padding="10dp"
+            android:selectAllOnFocus="true"
+            android:textAppearance="@style/DearOTextAppearance.Body.Regular.B1"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/discountListView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="o" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomLaout"
+        android:overScrollMode="never"
+        android:layout_below="@+id/topLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/row_proforma_border"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/new_estimator_title_min_height"
+                    android:paddingStart="@dimen/M_padding_small"
+                    android:text="AMC BENEFITS"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleMedium" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/amcBenefits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/row_icon_and_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/row_proforma_border"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/new_estimator_title_min_height"
+                    android:paddingStart="@dimen/M_padding_small"
+                    android:text="SERVICE INSTRUCTION"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleMedium" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/row_icon_and_text" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/row_proforma_border"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/new_estimator_title_min_height"
+                    android:paddingStart="@dimen/M_padding_small"
+                    android:text="TERMS &amp; CONDITION"
+                    android:textAppearance="@style/DearOTextAppearance.SubtitleMedium" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/termsAndCondition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/row_icon_and_text" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--BOTTOM LAYOUT-->
+    <LinearLayout
+        android:id="@+id/bottomLaout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/new_estimator_bottom"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/ll_estimator_view_details"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/total_amount"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/totalAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/DearOTextAppearance.Caption"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    tools:text="11,20,000" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/next"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:textAllCaps="true"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="@string/pdf_screen_button_raise_invoice"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

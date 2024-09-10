@@ -1,0 +1,463 @@
+{
+  "notification": {
+    "enabled": true,
+    "sms": {
+      "enabled": true,
+      "createJobCard": {
+        "enabled": true,
+        "template": "JOB_CARD_IN_PROGRESS_NON_PREVIEW_LINK",
+        "checked": true
+      },
+      "completeJobCard": {
+        "enabled": true,
+        "template": "JOB_CARD_COMPLETED_NON_PREVIEW_LINK",
+        "checked": true
+      },
+      "closeJobCard": {
+        "enabled": true,
+        "template": "JOB_CARD_FEEDBACK_LINK",
+        "checked": true
+      },
+      "createInvoice": {
+        "enabled": true,
+        "template": "JOB_CARD_INVOICED_TEMPLATE_2",
+        "checked": true
+      }
+    }
+  },
+  "gst": true,
+  "inventory": {
+    "enabled": true,
+    "mode": "strict",
+    "allowVendorCreation": true
+  },
+  "jobCard": {
+    "allowLabourSurcharges": {
+      "enabled": false,
+      "maxMechanicalLimit": 500,
+      "maxAccidentalLimit": 2000,
+      "maxOslLimit": 1000
+    },
+    "allowLabourReduction": {
+      "enabled": false
+    },
+    "serviceHistory": true,
+    "allowNewLabour": false,
+    "allowNewPart": false,
+    "allowPartRateChange": false,
+    "allowLabourRateChange": false,
+    "enabled": true,
+    "allowJobCardClosure": true,
+    "allowMrnEstimate": true,
+    "hsnEditable": {
+      "enabled": true,
+      "part": true,
+      "labour": true
+    },
+    "flow": "comprehensive",
+    "denyNewPartNumber": false,
+    "allowOnlyMfcPartNumber": false,
+    "allowReasonForDelay": {
+      "enabled": true,
+      "numberOfChangesAllowed": 3
+    },
+    "workOrder": {
+      "enabled": true
+    },
+    "preDelivery": {
+      "enabled": true,
+      "mode": "STRICT"
+    },
+    "approvals": {
+      "enabled": true
+    }
+  },
+  "invoice": {
+    "enabled": true,
+    "partNumberVisiblity": true,
+    "format": "000000",
+    "compositeScheme": {
+      "enabled": false,
+      "cgst": 3,
+      "sgst": 3,
+      "igst": 3
+    }
+  },
+  "miscLabour": {
+    "enabled": true,
+    "maxPrice": "1000",
+    "id": "CWGS0015"
+  },
+  "part": {
+    "enabled": false,
+    "cars": {
+      "enabled": true,
+      "ids": [
+        "C001",
+        "C002",
+        "C003",
+        "C004",
+        "C005",
+        "C006",
+        "C008",
+        "C010",
+        "C021",
+        "C023",
+        "C024",
+        "C025",
+        "C026",
+        "C027",
+        "C028",
+        "C029",
+        "C038",
+        "C043",
+        "C044",
+        "C045",
+        "C046",
+        "C047",
+        "C076",
+        "C080",
+        "C081",
+        "C082",
+        "C089",
+        "C098",
+        "C160",
+        "C178",
+        "C183",
+        "C184",
+        "C206",
+        "C218",
+        "C219",
+        "C316",
+        "C601",
+        "C605",
+        "C606",
+        "C607",
+        "C608",
+        "C609",
+        "C639",
+        "C640",
+        "C691",
+        "C220",
+        "C011",
+        "C012",
+        "C221",
+        "C007",
+        "C009",
+        "C317",
+        "C318",
+        "C319",
+        "C320",
+        "C321",
+        "C322",
+        "C604",
+        "C609",
+        "C774",
+        "C775",
+        "C776",
+        "C777",
+        "C778",
+        "C779",
+        "C773"
+      ]
+    }
+  },
+  "labour": {
+    "enabled": false,
+    "cars": {
+      "enabled": false,
+      "ids": [
+        "CWGS0014",
+        "CWGS1005",
+        "CWWH0115",
+        "CWGS1006",
+        "CWGS0015",
+        "CWGS1011",
+        "CWBK0001",
+        "CWEN0059",
+        "CWCC0011",
+        "CWWH0008",
+        "CWBK0008",
+        "CWCC0109",
+        "CWBK1112",
+        "CWEE0042",
+        "CWEE0073",
+        "CWDT0002",
+        "CWEN0035",
+        "CWEE0096",
+        "CWEE0026",
+        "CWCC0030",
+        "CWEE0021",
+        "CWWH0013",
+        "CWGS0118",
+        "CWGS0219",
+        "CWBK1011",
+        "CWWH0009",
+        "CWWH0010"
+      ]
+    }
+  },
+  "make": {
+    "enabled": true,
+    "cars": {
+      "enabled": true,
+      "slugs": [
+        "cars-ashok-leyland",
+        "cars-aston-martin",
+        "cars-audi",
+        "cars-bentley",
+        "cars-bmw",
+        "cars-bugatti",
+        "cars-chrysler",
+        "cars-daewoo",
+        "cars-ferrari",
+        "cars-fiat",
+        "cars-force-motors",
+        "cars-ford",
+        "cars-gm",
+        "cars-hindustan-motors",
+        "cars-honda",
+        "cars-hyundai",
+        "cars-icml",
+        "cars-isuzu",
+        "cars-jaguar",
+        "cars-jeep",
+        "cars-koeninsegg",
+        "cars-lamborghini",
+        "cars-landrover",
+        "cars-mahindra",
+        "cars-mahindra-renault",
+        "cars-mahindra-reva",
+        "cars-maruti-suzuki",
+        "cars-maserati",
+        "cars-maybach",
+        "cars-mercedes-benz",
+        "cars-mini",
+        "cars-mitsubishi",
+        "cars-nissan",
+        "cars-opel",
+        "cars-porsche",
+        "cars-premier",
+        "cars-renault",
+        "cars-rolls-royce",
+        "cars-san",
+        "cars-skoda",
+        "cars-ssangyong",
+        "cars-tata",
+        "cars-toyota",
+        "cars-volkswagen",
+        "cars-volvo"
+      ]
+    }
+  },
+  "appointment": {
+    "enabled": true,
+    "packages": {
+      "enabled": true,
+      "mandatory": true
+    },
+    "bay": {
+      "enabled": false
+    },
+    "time": [
+      {
+        "day": "Monday",
+        "start": "09:00",
+        "end": "19:00"
+      },
+      {
+        "day": "Tuesday",
+        "start": "09:00",
+        "end": "19:00"
+      },
+      {
+        "day": "Wednesday",
+        "start": "09:00",
+        "end": "19:00"
+      },
+      {
+        "day": "Thursday",
+        "start": "09:00",
+        "end": "19:00"
+      },
+      {
+        "day": "Friday",
+        "start": "09:00",
+        "end": "19:00"
+      },
+      {
+        "day": "Saturday",
+        "start": "09:00",
+        "end": "19:00"
+      }
+    ],
+    "slots": {
+      "enabled": true,
+      "interval": 15,
+      "overbook": true
+    },
+    "notifyCustomer": true
+  },
+  "workingDays": [
+    {
+      "day": "Monday",
+      "start": "09:00",
+      "end": "19:00"
+    },
+    {
+      "day": "Tuesday",
+      "start": "09:00",
+      "end": "19:00"
+    },
+    {
+      "day": "Wednesday",
+      "start": "09:00",
+      "end": "19:00"
+    },
+    {
+      "day": "Thursday",
+      "start": "09:00",
+      "end": "19:00"
+    },
+    {
+      "day": "Friday",
+      "start": "09:00",
+      "end": "19:00"
+    },
+    {
+      "day": "Saturday",
+      "start": "09:00",
+      "end": "19:00"
+    }
+  ],
+  "lunchTime": {
+    "start": "13:00",
+    "end": "14:00"
+  },
+  "servicePackage": {
+    "enabled": true,
+    "includeTax": true
+  },
+  "validation": {
+    "enabled": true,
+    "vinNumber": false,
+    "insurance": false
+  },
+  "partFinder": {
+    "enabled": true
+  },
+  "amc": {
+    "enabled": true
+  },
+  "accidental": {
+    "enabled": true
+  },
+  "customerView": {
+    "enabled": true,
+    "jobCard": {
+      "enabled": false
+    }
+  },
+  "workshopInfo": {
+    "zone": [
+      "East",
+      "West",
+      "North 1"
+    ],
+    "area": [
+      "Bihar",
+      "ROM",
+      "Rajasthan",
+      "Jaipur",
+      "Agra",
+      "MP",
+      "Mumbai"
+    ],
+    "abh": [
+      "Aamir Eqbal",
+      "Kiran Patil",
+      "Vivek Rangile",
+      "Yogesh Deshpande",
+      "Arya Bhushan",
+      "Abhishek Shrivastava"
+    ],
+    "apm": [
+      "Chandan Kumar",
+      "Jitendra Bhodale",
+      "Abhishek Tiwari",
+      "Pradeep Sethi",
+      "Mayank Sharma",
+      "Manoj Kumbhare"
+    ],
+    "fbm": [
+      "Keshav Kumar",
+      "Mukesh Lakhwara",
+      "Dushyant Gite",
+      "Onkar Bhujwal",
+      "Mayank Sharma",
+      "Vijay Rathore",
+      "Pradeep Sethi",
+      "Aditya Verma"
+    ],
+    "zh": [
+      "Sourav Paul",
+      "Vijay Srivastava",
+      "Rajeev Rewaria"
+    ],
+    "ageRange": [
+      {
+        "min": 0,
+        "max": 3,
+        "text": "1-3 mnths"
+      },
+      {
+        "min": 4,
+        "max": 6,
+        "text": "4-6 mnths"
+      },
+      {
+        "min": 7,
+        "max": 12,
+        "text": "7-12 mnths"
+      },
+      {
+        "min": 13,
+        "max": null,
+        "text": "13+ months"
+      }
+    ]
+  },
+  "customerSource": {
+    "enabled": true,
+    "options": [
+      "Walk-in",
+      "Newspaper Ad",
+      "Print Ad",
+      "TV Ad",
+      "Leaflet"
+    ]
+  },
+  "branding": {
+    "enabled": true
+  },
+  "vehicleType": {
+    "enabled": true,
+    "values": [
+      "cars",
+      "bikes"
+    ]
+  },
+  "purchaseOrder": {
+    "enabled": true
+  },
+  "doorstep": {
+    "enabled": false
+  },
+  "access": {
+    "enabled": false,
+    "serviceAdvisor": false
+  },
+  "otc": {
+    "enabled": true
+  }
+}
